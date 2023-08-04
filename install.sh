@@ -54,11 +54,11 @@ TOK=$(echo ${TOK} | sed 's@cloudflared.exe service install ey@ey@g')
 #设置哪吒
 read -p "设置NEZHA_SERVER :" NEZHA_SERVER
 
-NEZHA_SERVER=${NEZHA_SERVER:-'data.xuexi365.eu.org'}
+NEZHA_SERVER=${NEZHA_SERVER:-'data.xxxxxx'}
 
 read -p "设置NEZHA_KEY :" NEZHA_KEY
 
-NEZHA_KEY=${NEZHA_KEY:-'LPkmAqDwjZQN1ar3aG'}
+NEZHA_KEY=${NEZHA_KEY:-'LPkmAqDxxxx'}
 
 
 #哪吒其他默认参数，无需更改
