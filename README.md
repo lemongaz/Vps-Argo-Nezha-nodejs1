@@ -1,8 +1,8 @@
 # vps-xray-哪吒-Argo一键nodejs脚本
 
-ubuntu系统测试可用，其他未知（alpine不能用，debian应该可以）。脚本功能包括nezha，argo，xray,bbr加速
+ubuntu系统测试可用。脚本功能包括nezha，argo，xray,bbr加速
 
-一键脚本：
+
 ```
 bash <(wget -qO- https://raw.githubusercontent.com/dsadsadsss/Vps-Argo-Nezha-nodejs/main/install.sh)
 
@@ -20,8 +20,8 @@ bash <(wget -qO- https://raw.githubusercontent.com/dsadsadsss/Vps-Argo-Nezha-nod
 
 隧道设置端口8002
 
-
 # 免责声明:
-本仓库仅为自用备份，任何人不得私自下载, 如果下载了，请于下载后 24 小时内删除, 不得用作任何商业用途, 文字、数据及图片均有所属版权。 
+
+本仓库仅为自用备份，因为需要外链必须公开，但是任何人不得私自下载, 如果下载了，请于下载后 24 小时内删除, 不得用作任何商业用途, 文字、数据及图片均有所属版权。 
 
 如果你使用本仓库文件，造成的任何责任与本人无关, 本人不对使用者任何不当行为负责。
