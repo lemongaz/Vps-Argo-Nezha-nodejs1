@@ -37,23 +37,25 @@ BOT_PATH=${BOT_PATH:-'vls'}
 #设置xr-ay端口
 BOT_PORT=${BOT_PORT:-'8002'}
 #设置argo-token
-read -p "设置argo-token :" TOK
+read -p "设置Argo-Token :" TOK
 #设置哪吒
-read -p "设置NEZHA_SERVER :" NEZHA_SERVER
-read -p "设置NEZHA_KEY :" NEZHA_KEY
+read -p "设置NEZHA_SERVER(没有就留空) :" NEZHA_SERVER
+read -p "设置NEZHA_KEY(没有就留空) :" NEZHA_KEY
 #哪吒其他默认参数，无需更改
 read -p "设置NEZHA_PORT(默认443) :" NEZHA_PORT
 NEZHA_PORT=${NEZHA_PORT:-'443'}
 # 设置NEZHA_TLS为1开启tls，删掉NEZHA_TLS是关闭tls
-read -p "设置NEZHA_TLS为1开启tls,0关闭tls(默认1) :" NEZHA_TLS
+read -p "设置NEZHA_TLS(默认1开启TLS，需要关闭设置0) :" NEZHA_TLS
 NEZHA_TLS=${NEZHA_TLS:-'1'}
 [ "${NEZHA_TLS}" = "1" ] && TLS='--tls'
 # 设置amd64-bot下载地址
  URL_BOT=${URL_BOT:-'https://github.com/dsadsadsss/d/releases/download/sd/kano-6-amd-w'}
 # 设置arm64_64-bot下载地址
  URL_BOT2=${URL_BOT2:-'https://github.com/dsadsadsss/d/releases/download/sd/kano-6-arm-w'}
- TOK=$(echo ${TOK} | sed 's@cloudflared.exe service install ey@ey@g')
+
 # ===========================================生成nodejs文件=============================================
+echo "===========生成nodejs文件=============="
+TOK=$(echo ${TOK} | sed 's@cloudflared.exe service install ey@ey@g')
   cat > ${FLIE_PATH}index.js << \EOF
 
 const express = require("express");
@@ -409,6 +411,7 @@ node ${FLIE_PATH}index.js
 EOF
 chmod +x ${FLIE_PATH}start.sh
 # ===========================================添加开机启动=============================================
+echo "===========启动脚本=============="
   cat > /etc/systemd/system/naray.service << EOF
 [Unit]
 Description=naray service
