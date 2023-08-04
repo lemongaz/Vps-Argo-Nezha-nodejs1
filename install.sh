@@ -37,7 +37,7 @@ BOT_PATH=${BOT_PATH:-'vls'}
 #设置xr-ay端口
 BOT_PORT=${BOT_PORT:-'8002'}
 #设置argo-token
-read -p "设置Argo-Token :" TOK
+read -p "设置Argo-Token(没有就留空) :" TOK
 #设置哪吒
 read -p "设置NEZHA_SERVER(没有就留空) :" NEZHA_SERVER
 read -p "设置NEZHA_KEY(没有就留空) :" NEZHA_KEY
