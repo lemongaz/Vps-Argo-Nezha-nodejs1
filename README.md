@@ -16,3 +16,5 @@ bash <(wget -qO- https://raw.githubusercontent.com/dsadsadsss/Vps-Argo-Nezha-nod
 输入/vls 返回bedrequest说明节点可用
 
 支持隧道与直连两种方式配置节点
+
+隧道设置端口8002
