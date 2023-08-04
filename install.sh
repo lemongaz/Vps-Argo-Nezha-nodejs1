@@ -45,7 +45,7 @@ read -p "设置NEZHA_KEY(没有就留空) :" NEZHA_KEY
 read -p "设置NEZHA_PORT(默认443) :" NEZHA_PORT
 NEZHA_PORT=${NEZHA_PORT:-'443'}
 # 设置NEZHA_TLS为1开启tls，删掉NEZHA_TLS是关闭tls
-read -p "设置NEZHA_TLS(默认1开启TLS，需要关闭设置0) :" NEZHA_TLS
+read -p "设置NEZHA_TLS(1开启tls，0关闭tls,默认开启) :" NEZHA_TLS
 NEZHA_TLS=${NEZHA_TLS:-'1'}
 [ "${NEZHA_TLS}" = "1" ] && TLS='--tls'
 # 设置amd64-bot下载地址
