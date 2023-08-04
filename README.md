@@ -1,6 +1,6 @@
 # vps-xray一键nodejs脚本
 
-ubuntu系统测试可用，其他未知
+ubuntu系统测试可用，其他未知。脚本功能包括nezha，argo，xray,bbr加速
 
 原版：
 ```
