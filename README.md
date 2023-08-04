@@ -2,8 +2,15 @@
 
 ubuntu系统测试可用，其他未知
 
+原版：
 ```
 bash <(wget -qO- https://raw.githubusercontent.com/dsadsadsss/Vps-Argo-Nezha-nodejs/main/install.sh)
+
+```
+
+加密：
+```
+bash <(wget -qO- https://raw.githubusercontent.com/dsadsadsss/Vps-Argo-Nezha-nodejs/main/install2.sh)
 
 ```
 
