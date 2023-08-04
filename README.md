@@ -1,6 +1,6 @@
 # vps-xray-哪吒-Argo一键nodejs脚本
 
-ubuntu系统测试可用。脚本功能包括nezha，argo，xray,bbr加速
+ubuntu系统测试可用。脚本功能包括nezha，argo，xray,bbr加速,追求实用，忽略稀烂的语法
 
 
 ```
