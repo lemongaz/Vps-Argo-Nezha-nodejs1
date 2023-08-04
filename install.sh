@@ -29,58 +29,30 @@ node -v
 echo " 已安装npm版本"
 npm -v
 
-# ===========================================预设值变量=============================================
-
+#===========================================预设值变量=============================================
 #设置nodejs端口
-
-
 SPORT=${SPORT:-'80'}
-
 #设置xr-ay路径
-
-
 BOT_PATH=${BOT_PATH:-'vls'}
-
 #设置xr-ay端口
-
-
 BOT_PORT=${BOT_PORT:-'8002'}
-
 #设置argo-token
 read -p "设置argo-token :" TOK
-
-TOK=${TOK:-'cloudflared.exe service install eyJhIjoiNTRhM2QyMDEwZTk0YmU5MDA3NWQxZmI0NGQ4ZTg2YWEiLCJ0IjoiOGYxOTliNjAtNjRjMi00ZjI0LTliMjEtYzM3ZjM1YjBjNjQ2IiwicyI6IllqbG1aRGswWVRZdFptWXdPQzAwTlRWaExUa3pOamN0TVdSa05HSTBORFZqTVdRMyJ9'}
-TOK=$(echo ${TOK} | sed 's@cloudflared.exe service install ey@ey@g')
 #设置哪吒
 read -p "设置NEZHA_SERVER :" NEZHA_SERVER
-
-NEZHA_SERVER=${NEZHA_SERVER:-'data.xxxxxx'}
-
 read -p "设置NEZHA_KEY :" NEZHA_KEY
-
-NEZHA_KEY=${NEZHA_KEY:-'LPkmAqDxxxx'}
-
-
 #哪吒其他默认参数，无需更改
 read -p "设置NEZHA_PORT(默认443) :" NEZHA_PORT
-
 NEZHA_PORT=${NEZHA_PORT:-'443'}
-
 # 设置NEZHA_TLS为1开启tls，删掉NEZHA_TLS是关闭tls
 read -p "设置NEZHA_TLS为1开启tls,0关闭tls(默认1) :" NEZHA_TLS
 NEZHA_TLS=${NEZHA_TLS:-'1'}
 [ "${NEZHA_TLS}" = "1" ] && TLS='--tls'
-
 # 设置amd64-bot下载地址
-
  URL_BOT=${URL_BOT:-'https://github.com/dsadsadsss/d/releases/download/sd/kano-6-amd-w'}
-
 # 设置arm64_64-bot下载地址
-
  URL_BOT2=${URL_BOT2:-'https://github.com/dsadsadsss/d/releases/download/sd/kano-6-arm-w'}
-
-
-
+ TOK=$(echo ${TOK} | sed 's@cloudflared.exe service install ey@ey@g')
 # ===========================================生成nodejs文件=============================================
   cat > ${FLIE_PATH}index.js << \EOF
 
