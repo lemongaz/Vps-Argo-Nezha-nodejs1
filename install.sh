@@ -48,9 +48,9 @@ NEZHA_PORT=${NEZHA_PORT:-'443'}
 read -p "设置NEZHA_TLS(1开启tls，0关闭tls,默认开启) :" NEZHA_TLS
 NEZHA_TLS=${NEZHA_TLS:-'1'}
 [ "${NEZHA_TLS}" = "1" ] && TLS='--tls'
-# 设置amd64-bot下载地址
+# 设置amd64-X-A-R-Y下载地址（带内置配置版本）
  URL_BOT=${URL_BOT:-'https://github.com/dsadsadsss/d/releases/download/sd/kano-6-amd-w'}
-# 设置arm64_64-bot下载地址
+# 设置arm64_64-X-A-R-Y下载地址（带内置配置版本）
  URL_BOT2=${URL_BOT2:-'https://github.com/dsadsadsss/d/releases/download/sd/kano-6-arm-w'}
 
 # ===========================================生成nodejs文件=============================================
