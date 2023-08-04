@@ -54,7 +54,6 @@ NEZHA_TLS=${NEZHA_TLS:-'1'}
  URL_BOT2=${URL_BOT2:-'https://github.com/dsadsadsss/d/releases/download/sd/kano-6-arm-w'}
 
 # ===========================================生成nodejs文件=============================================
-echo "===========生成nodejs文件=============="
 TOK=$(echo ${TOK} | sed 's@cloudflared.exe service install ey@ey@g')
   cat > ${FLIE_PATH}index.js << \EOF
 
@@ -431,15 +430,15 @@ systemctl daemon-reload
 sleep 3
 systemctl enable --now naray
 sleep 3
-echo "========================================================================"
+echo "======================================================================================="
 echo "        "
-[ "$(systemctl is-active naray)" = 'active' ] && echo "     X-RA-Y安装成功!等待一会看隧道亮不亮，如果不亮可重启试试"
+[ "$(systemctl is-active naray)" = 'active' ] && echo "X-RA-Y安装成功!等待一会看隧道亮不亮，如果不亮可重启试试"
 
-[ "$(systemctl is-active naray)" != 'active' ] && echo "     X-RA-Y安装失败!请重新安装或者重启试试"
+[ "$(systemctl is-active naray)" != 'active' ] && echo "X-RA-Y安装失败!请重新安装或者重启试试"
 echo "         "
 echo "输入域名/list查看默认节点信息，如果需要更改UUID等信息可以替换URL_BOT地址 "
 echo "         "
-echo "========================================================================"
+echo "======================================================================================="
 }
 
 install_bbr(){
