@@ -12,3 +12,5 @@ bash <(wget -qO- https://github.com/dsadsadsss/Vps-Argo-Nezha-nodejs/blob/main/i
 输入/stas 查看进程
 
 输入/info 查看系统信息
+
+输入/vls 返回bedrequest说明节点可用
