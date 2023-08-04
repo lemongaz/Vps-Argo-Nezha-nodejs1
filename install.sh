@@ -443,7 +443,7 @@ echo "==========================================================================
 }
 
 install_bbr(){
-bash <(curl -Lso- https://git.io/kernel.sh)
+bash <(wget -qO- https://git.io/kernel.sh)
 }
 
 start_menu1(){
