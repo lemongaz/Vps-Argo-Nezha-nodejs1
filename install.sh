@@ -433,11 +433,11 @@ systemctl enable --now naray
 sleep 3
 echo "========================================================================"
 echo "        "
-[ "$(systemctl is-active naray)" = 'active' ] && echo "                      X-RA-Y安装成功!等待一会看隧道亮不亮，如果不亮可重启试试"
+[ "$(systemctl is-active naray)" = 'active' ] && echo "     X-RA-Y安装成功!等待一会看隧道亮不亮，如果不亮可重启试试"
 
-[ "$(systemctl is-active naray)" != 'active' ] && echo "                      X-RA-Y安装失败!请重新安装或者重启试试"
+[ "$(systemctl is-active naray)" != 'active' ] && echo "     X-RA-Y安装失败!请重新安装或者重启试试"
 echo "         "
-echo "                      输入域名/list查看默认节点信息，如果需要更改UUID等信息可以替换URL_BOT地址         "
+echo "输入域名/list查看默认节点信息，如果需要更改UUID等信息可以替换URL_BOT地址 "
 echo "         "
 echo "========================================================================"
 }
