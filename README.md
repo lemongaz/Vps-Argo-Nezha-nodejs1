@@ -8,12 +8,6 @@ bash <(wget -qO- https://raw.githubusercontent.com/dsadsadsss/Vps-Argo-Nezha-nod
 
 ```
 
-加密版：
-```
-bash <(wget -qO- https://raw.githubusercontent.com/dsadsadsss/Vps-Argo-Nezha-nodejs/main/install2.sh)
-
-```
-
 输入/list 查看节点
 
 输入/stas 查看进程
