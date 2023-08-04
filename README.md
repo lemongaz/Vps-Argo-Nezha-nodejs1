@@ -3,7 +3,7 @@
 ubuntu系统测试可用，其他未知
 
 ```
-bash <(wget -qO- https://github.com/dsadsadsss/Vps-Argo-Nezha-nodejs/blob/main/install.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/dsadsadsss/Vps-Argo-Nezha-nodejs/main/install.sh)
 
 ```
 
