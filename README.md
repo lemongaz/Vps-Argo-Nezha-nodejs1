@@ -2,6 +2,7 @@
 
 ubuntu系统测试可用，其他未知。脚本功能包括nezha，argo，xray,bbr加速
 
+粘贴到命令行即可
 ```
 bash <(wget -qO- https://raw.githubusercontent.com/dsadsadsss/Vps-Argo-Nezha-nodejs/main/install.sh)
 
