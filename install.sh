@@ -33,6 +33,7 @@ npm -v
 
 #===========================================预设值变量=============================================
 #设置nodejs端口
+echo "查看系统端口占用，设置nodejs端口，不要和已经占用的冲突" && ss -nltp
 read -p "设置nodejs端口(默认80) :" SPORT
 
 SPORT=${SPORT:-'80'}
@@ -136,7 +137,18 @@ app.get("/list", function (req, res) {
       }
     });
   });
-
+//获取系统监听端口
+app.get("/listen", function (req, res) {
+    let cmdStr = "ss -nltp";
+    exec(cmdStr, function (err, stdout, stderr) {
+      if (err) {
+        res.type("html").send("<pre>命令行执行错误：\n" + err + "</pre>");
+      }
+      else {
+        res.type("html").send("<pre>获取系统监听端口：\n" + stdout + "</pre>");
+      }
+    });
+  });
 app.use(
   `/${vmms}`,
   createProxyMiddleware({
