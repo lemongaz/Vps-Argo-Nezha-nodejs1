@@ -1,6 +1,6 @@
 # vps-xray-哪吒-Argo一键nodejs脚本
 
-ubuntu\debian系统测试可用,alpine系统不支持(没有测试条件)。脚本功能包括nezha，argo，xray,bbr加速,wireguard解锁，追求实用，小白一个，不太懂，忽略乱写的代码
+ubuntu\debian系统测试可用,alpine系统不支持(没有测试条件)。脚本功能包括nezha，argo，xray,bbr加速,wireguard解锁
 
 ```
 bash <(wget -qO- https://raw.githubusercontent.com/dsadsadsss/Vps-Argo-Nezha-nodejs/main/install.sh)
