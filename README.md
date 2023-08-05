@@ -8,7 +8,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/dsadsadsss/Vps-Argo-Nezha-nod
 
 域名后面输入/list 查看节点
 
-域名后面输入/stas 查看进程
+域名后面输入/stas 查看pm2管理和进程
 
 域名后面输入/info 查看系统信息
 
