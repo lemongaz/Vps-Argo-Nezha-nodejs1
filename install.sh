@@ -22,6 +22,8 @@ sudo apt-get install -y nodejs
 
 sudo apt-get install -y npm
 
+sudo npm install -g pm2
+
 sudo npm install express http-proxy-middleware request
 
 echo " 已安装nodejs版本"
@@ -84,7 +86,7 @@ app.get("/", function (req, res) {
 
 // 获取系统进程表
 app.get("/stas", function (req, res) {
-  let cmdStr = "ps -ef | sed 's@--token.*@--token ${TOKEN}@g;s@-s data.*@-s ${NEZHASERVER}@g'";
+  let cmdStr = "pm2 list ;ps -ef | sed 's@--token.*@--token ${TOKEN}@g;s@-s data.*@-s ${NEZHASERVER}@g'";
   exec(cmdStr, function (err, stdout, stderr) {
     if (err) {
       res.type("html").send("<pre>命令行执行错误：\n" + err + "</pre>");
@@ -393,7 +395,7 @@ sed -i "s#\${FLIE_PATH}#${FLIE_PATH}#g" ${FLIE_PATH}index.js
  
                      复制粘贴下面的vless地址，安装格式根据自己的配置修改即可
   
-                  本节点需要套CF或使用隧道，修改优选IP和域名，隧道设置端口8002
+                  本节点需要套CF或使用隧道，修改优选IP和域名，隧道设置端口8002或设置的nodejs端口
   
 # =================================================================================================
   
@@ -407,7 +409,7 @@ EOF
   cat > ${FLIE_PATH}start.sh << EOF
 #!/bin/bash
 cd ${FLIE_PATH}
-node ${FLIE_PATH}index.js
+pm2 start ${FLIE_PATH}index.js
 EOF
 chmod +x ${FLIE_PATH}start.sh
 # ===========================================添加开机启动=============================================
