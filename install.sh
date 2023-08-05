@@ -416,38 +416,20 @@ vless://fd80f56e-93f3-4c85-b2a8-c77216c509a7@cdn.xn--b6gac.eu.org:443?host=ARGO%
 # =================================================================================================
   
 EOF
-  cat > ${FLIE_PATH}start.sh << EOF
-#!/bin/bash
-cd ${FLIE_PATH}
-pm2 start ${FLIE_PATH}index.js
-EOF
-chmod +x ${FLIE_PATH}start.sh
 # ===========================================添加开机启动=============================================
 echo "===========启动脚本=============="
-  cat > /etc/systemd/system/naray.service << EOF
-[Unit]
-Description=naray service
-After=network.target network-online.target syslog.target
-Wants=network.target network-online.target
 
-[Service]
-Type=simple
+cd ${FLIE_PATH}
+pm2 start ${FLIE_PATH}index.js
+pm2 save
+pm2 startup
 
-
-ExecStart=${FLIE_PATH}start.sh
-
-[Install]
-WantedBy=multi-user.target
-EOF
-systemctl daemon-reload
-sleep 3
-systemctl enable --now naray
-sleep 3
+STAS=$(systemctl list-units --type=service --all | grep pm2- | awk '{print $3}')
 echo "======================================================================================="
 echo "        "
-[ "$(systemctl is-active naray)" = 'active' ] && echo "X-RA-Y安装成功!等待一会看隧道亮不亮，如果不亮可重启试试" && ps -ef
+[ "$STAS" = 'active' ] && echo "X-RA-Y安装成功!如果不能用可重启试试" && pm2 list ;ps -ef
 
-[ "$(systemctl is-active naray)" != 'active' ] && echo "X-RA-Y安装失败!请重新安装或更换端口或者重启试试"
+[ "$STAS" != 'active' ] && echo "X-RA-Y安装失败!请重启试试或重新安装或更换端口"
 echo "         "
 echo "输入域名/list查看默认节点信息，如果需要更改UUID等信息可以替换URL_BOT地址 "
 echo "         "
