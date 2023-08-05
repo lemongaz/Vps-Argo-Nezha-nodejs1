@@ -35,16 +35,19 @@ let k=0
 while ((k<=0))
 do
 read -p "设置nodejs端口(默认80) :" SPORT
-pIDa=`lsof -i :${SPORT}|grep -v "PID" | awk '{print $2}'`
+pIDa=`lsof -i:${SPORT}|grep -v "PID" | awk '{print $2}'`
 if [ "$pIDa" != "" ];
 then
-   let k=1
-   echo "端口设置成功"
-else
-   echo "端口已使用，请更换端口"
    let k=0
+   echo "端口已使用，请更换端口"
+   
+else
+    let k=1
+    echo "端口设置成功"
 fi
+
 done
+
 SPORT=${SPORT:-'80'}
 #设置xr-ay路径
 BOT_PATH=${BOT_PATH:-'vls'}
