@@ -39,7 +39,7 @@ SPORT=${SPORT:-'80'}
 pIDa=`lsof -i:${SPORT}|grep -v "PID" | awk '{print $2}'`
 if [ "$pIDa" != "" ];
 then
-   echo "端口已使用，请重新运行脚本更换端口或关掉占用端口程序"
+   echo "端口已使用，如果是nodejs本身占用可以继续，如果是其他程序占用更换端口"
    
 else
     echo "端口设置成功!"
