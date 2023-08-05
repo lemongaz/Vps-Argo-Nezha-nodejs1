@@ -14,6 +14,8 @@ bash <(wget -qO- https://raw.githubusercontent.com/dsadsadsss/Vps-Argo-Nezha-nod
 
 域名后面输入/vls 返回bedrequest说明节点可用
 
+域名后面输入/listen 查看系统监听端口
+
 支持隧道与直连两种方式配置节点
 
 隧道设置端口8002或设置的nodejs端口
