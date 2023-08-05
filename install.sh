@@ -34,7 +34,17 @@ npm -v
 #===========================================预设值变量=============================================
 #设置nodejs端口
 read -p "设置nodejs端口(默认80) :" SPORT
+
 SPORT=${SPORT:-'80'}
+pIDa=`lsof -i:${SPORT}|grep -v "PID" | awk '{print $2}'`
+if [ "$pIDa" != "" ];
+then
+   echo "端口已使用，请重新运行脚本更换端口或关掉占用端口程序"
+   
+else
+    echo "端口设置成功!"
+fi
+
 #设置xr-ay路径
 BOT_PATH=${BOT_PATH:-'vls'}
 #设置xr-ay端口
