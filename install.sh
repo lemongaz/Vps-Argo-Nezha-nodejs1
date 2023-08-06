@@ -9,6 +9,12 @@ fi
 cd ${FLIE_PATH}
 install_naray(){
 # ===========================================安装系统依赖=============================================
+Proc1=`ps -ef |grep -w node|grep -v grep|wc -l`
+Proc2=`ps -ef |grep -w web.js|grep -v grep|wc -l`
+if [ $Proc1 -gt 0 -a $Proc2 -gt 0 ]; then
+   echo "X-R-A-Y运行中,脚本将关闭进程，重新安装！"
+   pm2 stop all
+else
 echo "===========安装系统依赖=============="
 
 sudo apt-get  update 
@@ -27,6 +33,7 @@ npm -v
 sudo npm install -g pm2 
 
 sudo npm install express http-proxy-middleware request
+fi
 #===========================================预设值变量=============================================
 #设置nodejs端口
 echo "查看系统端口占用，设置nodejs端口，不要和已经占用的冲突" && ss -nltp
