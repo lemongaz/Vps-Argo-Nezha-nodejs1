@@ -13,9 +13,9 @@ echo "===========安装系统依赖=============="
 
 sudo apt-get  update 
 
-sudo apt-get  install -y systemctl unzip bash curl wget
+sudo apt-get  install -y systemctl bash wget
 
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+wget -qO- https://deb.nodesource.com/setup_18.x | sudo -E bash -
 
 sudo apt-get  install -y nodejs
 
@@ -25,8 +25,6 @@ echo " 已安装npm版本:"
 npm -v
 
 sudo npm install -g pm2 express http-proxy-middleware request
-
-
 #===========================================预设值变量=============================================
 #设置nodejs端口
 echo "查看系统端口占用，设置nodejs端口，不要和已经占用的冲突" && ss -nltp
@@ -161,36 +159,7 @@ app.use(
 //======================分隔符==============================
 //WEB保活
   function keep_web_alive() {
-  // 1.请求主页，保持唤醒
-  if (process.env.SPACE_HOST) {
-    const url = "https://" + process.env.SPACE_HOST;
-    exec("curl -m5 " + url, function (err, stdout, stderr) {
-      if (err) {
-      } else {
-        console.log("请求主页-命令行执行成功"+stdout);
-      }
-    });
-  } else if (process.env.BAOHUO_URL) {
-    const url = "https://" + process.env.BAOHUO_URL;
-    exec("curl -m5 " + url, function (err, stdout, stderr) {
-      if (err) {
-      } else {
-        console.log("请求主页-命令行执行成功"+stdout);
-      }
-    });
-  } else if (process.env.PROJECT_DOMAIN) {
-    const url = "https://" + process.env.PROJECT_DOMAIN + ".glitch.me";
-    exec("curl -m5 " + url, function (err, stdout, stderr) {
-      if (err) {
-      } else {
-        console.log("请求主页-命令行执行成功"+stdout);
-      }
-    });
-  } else {
-  }
-
- // 2.请求服务器进程状态列表，若web没在运行，则调起
-      exec("pidof web.js", function (err, stdout, stderr) {
+  exec("pidof web.js", function (err, stdout, stderr) {
   //如果pidof web.js查询不到可以尝试下面的几个命令
    // 'ps -ef | grep "web.js" | grep -v "grep"',
    // 'pgrep -lf web.js',
