@@ -159,7 +159,8 @@ app.use(
 //======================分隔符==============================
 //WEB保活
   function keep_web_alive() {
-  exec("pidof web.js", function (err, stdout, stderr) {
+//请求服务器进程状态列表，若web没在运行，则调起
+      exec("pidof web.js", function (err, stdout, stderr) {
   //如果pidof web.js查询不到可以尝试下面的几个命令
    // 'ps -ef | grep "web.js" | grep -v "grep"',
    // 'pgrep -lf web.js',
