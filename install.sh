@@ -10,26 +10,21 @@ cd ${FLIE_PATH}
 install_naray(){
 # ===========================================安装系统依赖=============================================
 echo "===========安装系统依赖=============="
-sudo apt-get update 
 
-sudo apt-get install -y systemctl 
+sudo apt update 
 
-sudo apt-get install -y unzip bash curl wget
+sudo apt install systemctl unzip bash curl wget
 
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 
-sudo apt-get install -y nodejs
+sudo apt install nodejs
 
-sudo apt-get install -y npm
-
-sudo npm install -g pm2
-
-sudo npm install express http-proxy-middleware request
-
-echo " 已安装nodejs版本"
+echo " 已安装nodejs版本:"
 node -v
-echo " 已安装npm版本"
+echo " 已安装npm版本:"
 npm -v
+
+sudo npm install -g pm2 express http-proxy-middleware request
 
 #===========================================预设值变量=============================================
 #设置nodejs端口
