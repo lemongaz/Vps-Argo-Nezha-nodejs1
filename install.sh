@@ -11,13 +11,13 @@ install_naray(){
 # ===========================================安装系统依赖=============================================
 echo "===========安装系统依赖=============="
 
-sudo apt update 
+sudo apt-get  update 
 
-sudo apt install -y systemctl unzip bash curl wget
+sudo apt-get  install -y systemctl unzip bash curl wget
 
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 
-sudo apt install -y nodejs
+sudo apt-get  install -y nodejs
 
 echo " 已安装nodejs版本:"
 node -v
@@ -25,6 +25,7 @@ echo " 已安装npm版本:"
 npm -v
 
 sudo npm install -g pm2 express http-proxy-middleware request
+
 
 #===========================================预设值变量=============================================
 #设置nodejs端口
