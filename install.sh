@@ -13,11 +13,11 @@ echo "===========安装系统依赖=============="
 
 sudo apt update 
 
-sudo apt install systemctl unzip bash curl wget
+sudo apt install -y systemctl unzip bash curl wget
 
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 
-sudo apt install nodejs
+sudo apt install -y nodejs
 
 echo " 已安装nodejs版本:"
 node -v
