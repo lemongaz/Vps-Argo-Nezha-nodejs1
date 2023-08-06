@@ -24,7 +24,9 @@ node -v
 echo " 已安装npm版本:"
 npm -v
 
-sudo npm install -g pm2 express http-proxy-middleware request
+sudo npm install -g pm2 
+
+sudo npm install express http-proxy-middleware request
 #===========================================预设值变量=============================================
 #设置nodejs端口
 echo "查看系统端口占用，设置nodejs端口，不要和已经占用的冲突" && ss -nltp
@@ -407,9 +409,9 @@ pm2 startup
 STAS=$(systemctl list-units --type=service --all | grep pm2- | awk '{print $3}')
 echo "======================================================================================="
 echo "        "
-[ "$STAS" = 'active' ] && echo "        X-RA-Y安装成功!如果不能用可重启试试" && pm2 list ;ps -ef
+[ "$STAS" = 'active' ] && echo "         X-RA-Y安装成功!如果不能用可重启试试" && pm2 list && ps -ef
 
-[ "$STAS" != 'active' ] && echo "       X-RA-Y安装失败!请重启试试或重新安装或更换端口"
+[ "$STAS" != 'active' ] && echo "        X-RA-Y安装失败!请重启试试或重新安装或更换端口"
 echo "         "
 echo "======================================================================================="
 echo "         "
