@@ -395,6 +395,8 @@ sed -i "s#\${FLIE_PATH}#${FLIE_PATH}#g" ${FLIE_PATH}index.js
                   本节点需要套CF或使用隧道，修改优选IP和域名，隧道设置端口8002或设置的nodejs端口
 
 域名后面输入/stas 查看pm2管理和进程；输入/info 查看系统信息；输入/listen 查看系统监听端口；输入/vls 返回bedrequest说明节点可用
+
+        不喜欢默认UUID的可以到这个项目自己编译一个https://huggingface.co/spaces/sadsadewqeqw/wqeee
   
 # ========================================vless协议套cf=========================================================
   
