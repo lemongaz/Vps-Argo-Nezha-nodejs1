@@ -418,13 +418,14 @@ cd ${FLIE_PATH}
 pm2 start ${FLIE_PATH}index.js
 pm2 save
 pm2 startup
-
+sleep 10
 STAS=$(systemctl list-units --type=service --all | grep pm2- | awk '{print $3}')
+STAS2=$(pidof web.js)
 echo "======================================================================================="
 echo "        "
-[ "$STAS" = 'active' ] && echo "     X-RA-Y安装成功!检测哪吒或隧道是否点亮，建议重启一下！" && pm2 list && ps -ef
+[ "$STAS" = 'active' -o "$STAS2" != '' ] && echo "     X-RA-Y安装成功!检测哪吒或隧道是否点亮，建议重启一下！" && pm2 list && ps -ef
 
-[ "$STAS" != 'active' ] && echo "    X-RA-Y安装失败!存在误判可能，检测哪吒或隧道是否点亮，建议重启一下，或重新安装或更换端口尝试！"
+[ "$STAS" != 'active' -a "$STAS2" = '' ] && echo "    X-RA-Y安装失败!存在误判可能，检测哪吒或隧道是否点亮，建议重启一下，或重新安装或更换端口尝试！"
 echo "         "
 echo "======================================================================================="
 echo "         "
