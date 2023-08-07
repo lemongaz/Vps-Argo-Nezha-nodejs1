@@ -20,6 +20,8 @@ bash <(wget -qO- https://raw.githubusercontent.com/dsadsadsss/Vps-Argo-Nezha-nod
 
 隧道设置端口8002或设置的nodejs端口
 
+不喜欢默认UUID的可以到这个项目自己编译一个https://huggingface.co/spaces/sadsadewqeqw/wqeee
+
 
 BBR加速脚本来自：
 
