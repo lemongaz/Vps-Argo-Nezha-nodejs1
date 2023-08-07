@@ -17,22 +17,22 @@ if [ $Proc1 -gt 0 -a $Proc2 -gt 0 ]; then
 else
 echo "===========安装系统依赖=============="
 
-sudo apt-get  update 
+apt-get  update 
 
-sudo apt-get  install -y systemctl bash wget
+apt-get  install -y systemctl bash wget
 
-wget -qO- https://deb.nodesource.com/setup_18.x | sudo -E bash -
+wget -qO- https://deb.nodesource.com/setup_18.x | -E bash -
 
-sudo apt-get  install -y nodejs
+apt-get  install -y nodejs
 
 echo " 已安装nodejs版本:"
 node -v
 echo " 已安装npm版本:"
 npm -v
 
-sudo npm install -g pm2 
+npm install -g pm2 
 
-sudo npm install express http-proxy-middleware request
+npm install express http-proxy-middleware request
 fi
 #===========================================预设值变量=============================================
 #设置nodejs端口
